@@ -7,6 +7,7 @@ engine = create_engine(str(settings.DATABASE_URL))
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
+
 def get_db():
     db = SessionLocal()
     try:
@@ -15,5 +16,5 @@ def get_db():
         db.close()
 
 
-def create_tables():
-    Base.metadata.create_all(bind=engine)
+# Note: Tables are now created by Alembic migrations
+# The create_tables function has been removed

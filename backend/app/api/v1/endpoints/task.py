@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 
 from app.schemas.task import Task, TaskCreate, TaskUpdate
 from app.db.session import get_db
-from app.crud import tasks as crud
+from backend.app.crud import task as crud
 
 router = APIRouter()
 

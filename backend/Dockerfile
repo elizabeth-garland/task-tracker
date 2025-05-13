@@ -11,8 +11,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project files
 COPY . .
 
-# Set environment variables
-ENV DATABASE_URL=postgresql://user:password@db:5432/mydatabase
+# Environment variables will be provided by docker-compose.yml
+# or .env file when not using Docker
 
 # Run FastAPI app with Uvicorn
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

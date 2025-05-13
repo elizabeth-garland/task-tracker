@@ -90,15 +90,15 @@ def read_root():
 # app.include_router(api_router, prefix="/api/v1")
 
 # --- STARTUP EVENT ---
-# Uncomment once you've set up the database module
+# We're using Alembic for migrations, so this is no longer needed
 # @app.on_event("startup")
 # async def startup_event():
-#     from app.core.database import create_tables
+#     from app.db.session import create_tables
 #     create_tables()
 
 if __name__ == "__main__":
     # This can stay in main.py
     import uvicorn
 
-    # Base.metadata.create_all(bind=engine)  # Move this to the startup event
+    # Tables are now created by Alembic migrations, not directly by SQLAlchemy
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

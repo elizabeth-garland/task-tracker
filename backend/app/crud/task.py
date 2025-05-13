@@ -1,7 +1,7 @@
 from typing import List, Optional, Dict, Any, Union
 from sqlalchemy.orm import Session
 
-from app.models.tasks import Item
+from backend.app.models.task import Item
 from app.schemas.task import TaskCreate, TaskUpdate
 
 
